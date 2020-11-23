@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Lato", sans-serif;
+}
+
+html,
+body,
+div,
+h1,
+p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+:root {
+  --bloc1: #244f75;
+  --bloc2: #60bfbf;
+  --bloc3: #8c4b7e;
+  --bloc4: #f8bb44;
+  --bloc5: #f24b4b;
+}
+
+.stripes {
+  padding: 5px;
+  display: flex;
+  min-height: 100vh;
+}
+
+.stripes:nth-child(1) {
+  left: 0;
+}
+.stripes:nth-child(2) {
+  left: 20;
+}
+.stripes:nth-child(3) {
+  left: 40;
+}
+.stripes:nth-child(4) {
+  left: 60;
+}
+.stripes:nth-child(5) {
+  left: 80;
+}
+
+.strip {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.strip:nth-child(1) {
+  background-color: var(--bloc1);
+  margin: 5px;
+}
+.strip:nth-child(2) {
+  background-color: var(--bloc2);
+  margin: 5px;
+}
+.strip:nth-child(3) {
+  background-color: var(--bloc3);
+  margin: 5px;
+}
+.strip:nth-child(4) {
+  background-color: var(--bloc4);
+  margin: 5px;
+}
+.strip:nth-child(5) {
+  background-color: var(--bloc5);
+  margin: 5px;
+}
+
+.bloc {
+  background-color: rgba(255, 255, 255, 0.1);
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: skew(30deg);
+}
+
+.text {
+  color: white;
+  text-align: center;
+  transform: skew(-30deg);
+}
+
+.strip:hover > div {
+  animation-name: bloc_opacity;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+.strip:hover:before > div {
+  animation-name: bloc_opacity;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+.strip:hover:after > div {
+  animation-name: bloc_opacity;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+@keyframes bloc_opacity {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(5);
+  }
+}
